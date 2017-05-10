@@ -1,4 +1,4 @@
-(function(){
+(function () {
     /**
      * Smalldux is a small implementation of Redux
      * -------------------------------------------
@@ -19,7 +19,7 @@
      * They are the only source of information for the store. 
      * You send them to the store using store.dispatch().
      * 
-     * EX: 
+     * @param {Object}: 
      * {
      *  type: "INCREMENT", //Usually a constant, needs to be unique
      *  payload: 1          
@@ -27,24 +27,24 @@
      * 
      */
 
-     function createStore(reducer, initialState){
+    function createStore(reducer, initialState) {
         var state = initialState;
         var listeners = [];
 
         //Returns the state
-        function getState(){
+        function getState() {
             return state;
         }
 
         /**
          * Adding our listener to the array, those will be updated in the dispatch method
          */
-        function subscribe(listener){
+        function subscribe(listener) {
             listeners.push(listener);
         }
 
         // The `dispatch` method will call the reducer to eventually change the state
-        function dispatch(action){
+        function dispatch(action) {
 
             /**
              * The reduced needs to be a pure function, which means
@@ -56,10 +56,12 @@
              * We call every listener in the array, 
              * they will know what to do with the new state (updating the UI, maybe?)
              */
-            listeners.forEach(function(l) {
+            listeners.forEach(function (l) {
                 l();
-            }, this);            
+            }, this);
         }
+
+
 
         dispatch({ type: '@@smalldux/INIT' });
 
@@ -72,9 +74,38 @@
             dispatch: dispatch
         };
 
-     }
+    }
+
+    /**
+     * Combine reducer has the duty to take an object on which
+     * the key represents which part of the state to apply needs to be changed by the appropriate reduder (value)
+     * @param {
+     *  number: counter  <-- here the key of the state 'number' needs to be updated by the reducer counter
+     * }: 
+     */
+    function combineReducers(reducers) {
+        //We get the keys of the part of the state we need to update
+        var reducersKeys = Object.keys(reducers)
+        var nextState = {}
+
+        return function (state, action) {            
+            for (var i = 0; i < reducersKeys.length; i++) {
+                var key = reducersKeys[i]; //part of the state
+                var reducer = reducers[key];   //reducer to apply
+
+                /**
+                 * Notice that the reduce receive ONLY state that
+                 * belongs to him, not the whole state object
+                 */
+                nextState[key] = reducer(state[key], action);
+            }
+
+            return nextState;
+        }
+    }
 
     window.Smalldux = {
-        createStore: createStore
+        createStore: createStore,
+        combineReducers: combineReducers
     };
 })();

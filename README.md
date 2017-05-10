@@ -8,7 +8,7 @@ A commented version of the Redux createStore function
 This html has been taken from the official redux repo [counter-vanilla](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/index.html) you can easily switch from Redux to Smalldux without breaking the demo.
 
  #### App Preview
- <img src="https://github.com/Alexintosh/understanding-redux/examples/vanilla/demo.gif?raw=true" alt="Preview">
+ <img src="https://raw.githubusercontent.com/Alexintosh/understanding-redux/master/examples/vanilla/demo.gif" alt="Preview">
 
 ## Usefull links
 

@@ -103,7 +103,7 @@
                 var reducer = reducers[key];   //reducer to apply
 
                 /**
-                 * Notice that the reduce receive ONLY state that
+                 * Notice that the reduce receive ONLY the state which
                  * belongs to him, not the whole state object
                  */
                 nextState[key] = reducer(state[key], action);

@@ -4,6 +4,12 @@
 ## Smalldux
 A commented version of the Redux createStore function
 
+#### TODO
+- [X] createStore
+- [X] combineReducers
+- [ ] applyMiddleware
+- [ ] Redux Thunk
+
 ### Vanilla example
 This html has been taken from the official redux repo [counter-vanilla](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/index.html) you can easily switch from Redux to Smalldux without breaking the demo.
 
@@ -17,6 +23,8 @@ This html has been taken from the official redux repo [counter-vanilla](https://
 * [Build Yourself a Redux](https://zapier.com/engineering/how-to-build-redux/)
 * [Redux Design Patterns](http://paulserraino.com/javascript/2016/02/16/hacking-redux.html)
 * [Idiomatic Redux: part1](http://blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-1/)
+* [Idiomatic Redux: part2](http://blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-2/)
+* [Idiomatic Redux: Why use action creators?](http://blog.isquaredsoftware.com/2016/10/idiomatic-redux-why-use-action-creators/)
 
 ## File Structure
 

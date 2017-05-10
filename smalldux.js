@@ -41,6 +41,14 @@
          */
         function subscribe(listener) {
             listeners.push(listener);
+
+            /**
+             * Subscribe should return an unsubscribe function
+             */
+            return function unsubscribe() {
+                var index = listeners.indexOf(listener);
+                listeners.splice(index, 1);
+            };
         }
 
         // The `dispatch` method will call the reducer to eventually change the state
@@ -88,7 +96,8 @@
         var reducersKeys = Object.keys(reducers)
         var nextState = {}
 
-        return function (state, action) {            
+        return function (_state, action) {            
+            var state = _state || {};
             for (var i = 0; i < reducersKeys.length; i++) {
                 var key = reducersKeys[i]; //part of the state
                 var reducer = reducers[key];   //reducer to apply

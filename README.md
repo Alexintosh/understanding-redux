@@ -26,6 +26,15 @@ This html has been taken from the official redux repo [counter-vanilla](https://
 * [Idiomatic Redux: part2](http://blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-2/)
 * [Idiomatic Redux: Why use action creators?](http://blog.isquaredsoftware.com/2016/10/idiomatic-redux-why-use-action-creators/)
 
+## How can I support the developer?
+- Star the GitHub repo :star:
+- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
+- Follow me on [Twitter](https://twitter.com/alexintosh) :feet:
+
+## Can I hire you?
+Yes!  Ping me on [Twitter](https://twitter.com/alexintosh) or get in touch by [mail](mailto:alessio.d@gmail.com)
+I will be happy to work with you!
+
 ## File Structure
 
 ```markdown
